@@ -110,13 +110,13 @@ Accounts by Billing Country after cleanup:
 | Field | Meaning | Rule applied |
 |---|---|---|
 | Account Name | Customer or company name | Required; checked for duplicates |
-| Billing Country | Country of the billing address | Must be a valid standard value (India, Singapore, United Kingdom) |
-| Billing City | City of the billing address | Completeness monitored by report |
-| Phone | Main contact number | Digits only, no negative or invalid values; completeness monitored |
-| Industry | Customer industry | Completeness monitored |
+| Type | Account type, for example Partner | Descriptive field; not validated in this project |
+| Industry | Customer industry | Completeness monitored by report |
+| Phone | Main contact number | Must be a valid number (spaces allowed), no negative values; completeness monitored |
 | Website | Company website | Completeness monitored; used to spot duplicates |
+| Billing City | City of the billing address | Completeness monitored by report |
+| Billing Country | Country of the billing address | Must be a standard value (India, Singapore, United Kingdom) |
 
-*(TODO: add any other columns from your CSV.)*
 
 ## Data Quality Checks Used
 
