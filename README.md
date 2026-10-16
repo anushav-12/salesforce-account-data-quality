@@ -31,9 +31,10 @@ Load a deliberately messy set of customer accounts into Salesforce, find and fix
 ### 1. Initial import: 159 loaded, 36 failed
 Imported 195 accounts. 36 records failed because Billing Country values were not valid picklist values. The error file showed exactly which values caused it.
 
-![Import wizard](screenshots/01_import_wizard_195_records.png)
-![Bulk job result](screenshots/02_bulk_job_159_loaded_36_failed.png)
-![Error CSV](screenshots/03_error_csv_invalid_country.png)
+![Import wizard](salesforce/01_import_wizard_195_records.png)
+![Bulk job result](salesforce/02_bulk_job_159_loaded_36_failed.png)
+![Error CSV](salesforce/03_error_csv_invalid_country1.png)
+![Error CSV](salesforce/03_error_csv_invalid_country2.png)
 
 ### 2. Standardise and reload: 34 loaded, 2 failed
 Standardised the country values to one format (for example `UK` and `united kingdom` become **United Kingdom**, `IN`, `india` and `Bharat` become **India**, `SG` becomes **Singapore**) and reloaded the failed records. 34 loaded and 2 failed: one was blocked as an exact duplicate by the duplicate rule, and one still had an invalid country value.
