@@ -76,9 +76,9 @@ Accounts by Billing Country after cleanup:
 
 | Billing Country | Accounts |
 |---|---|
-| India | *(TODO)* |
-| Singapore | *(TODO)* |
-| United Kingdom | *(TODO)* |
+| India | *134* |
+| Singapore | *28* |
+| United Kingdom | *32* |
 | **Total** | **179** |
 
 ![Billing country, 179 after cleanup](salesforce/11_report_billing_country_194_before1.png)
