@@ -31,18 +31,31 @@ Load a deliberately messy set of customer accounts into Salesforce, find and fix
 ### 1. Initial import: 159 loaded, 36 failed
 Imported 195 accounts. 36 records failed because Billing Country values were not valid picklist values. The error file showed exactly which values caused it.
 
-![Import wizard](salesforce/01_import_wizard_195_records.png)
+![Import wizard](salesforce/1_import_wizard_195_records.png)
 ![Bulk job result](salesforce/02_bulk_job_159_loaded_36_failed.png)
-![Error CSV](salesforce/03_error_csv_invalid_country1.png)
-![Error CSV](salesforce/03_error_csv_invalid_country2.png)
+![Error CSV, part 1](salesforce/03_error_csv_invalid_country1.png)
+![Error CSV, part 2](salesforce/03_error_csv_invalid_country2.png)
 
-### 2. Standardise and reload: 34 loaded, 2 failed
-Standardised the country values to one format (for example `UK` and `united kingdom` become **United Kingdom**, `IN`, `india` and `Bharat` become **India**, `SG` becomes **Singapore**) and reloaded the failed records. 34 loaded and 2 failed: one was blocked as an exact duplicate by the duplicate rule, and one still had an invalid country value.
+### 2. Standardise and reload: 34 loaded, 2 failed, then 1 more
+Standardised the country values to one format (for example `UK` becomes **United Kingdom**, `IN`, `india` and `Bharat` become **India**, `SG` becomes **Singapore**) and reloaded the failed records.
 
-Total accounts after load: **194** *(TODO: add one line explaining how the last record was added, e.g. fixed and created manually)*.
+![Corrected CSV with valid countries](salesforce/03_corrected_csv_valid_country.png)
 
-![Reload result](salesforce/04_reload_34_loaded_2_failed1.png)
-![Accounts by Billing Country, 194 total](salesforce/06_all_194_completed.png)
+34 loaded and 2 failed: one was blocked as an exact duplicate by the duplicate rule, and one still had an invalid country value.
+
+![Reload result, part 1](salesforce/04_reload_34_loaded_2_failed1.png)
+![Reload result, part 2](salesforce/04_reload_34_loaded_2_failed2.png)
+
+I corrected the last record with the invalid country value and reloaded it, and it loaded successfully.
+
+![Corrected record](salesforce/05_corrected.png)
+![Reload completed](salesforce/05_reloaded_1_completed.png)
+
+Total accounts after all loads: **194** (159 + 34 + 1).
+
+![All 194 records loaded](salesforce/06_all_194_completed.png)
+![Accounts by Billing Country, 194 total](salesforce/11_report_billing_country_194_before1.png)
+![Accounts by Billing Country, 194 total](salesforce/11_report_billing_country_194_before2.png)
 
 ### 3. Duplicate controls
 Activated the **Standard Account Duplicate Rule** with its **Matching Rule**, set to **Allow with Alert and Report**.
@@ -52,14 +65,14 @@ Activated the **Standard Account Duplicate Rule** with its **Matching Rule**, se
 
 ![Matching rule](salesforce/07_matching_rule_active.png)
 ![Duplicate rule](salesforce/07_duplicate_rule_active.png)
-![Duplicate record sets empty](salesforce/04_reload_34_loaded_2_failed1.png)
 
 ### 4. Manual duplicate review and cleanup: 194 to 179
 Because the rule missed near-duplicates, I reviewed accounts by name, phone and website, and deleted **15 duplicates** (exact and near). Accounts went from **194 to 179**.
 
-![Near-duplicate examples](salesforce/12_near_duplicate_examples1.png)
-![Near-duplicate examples](salesforce/12_near_duplicate_examples2.png)
-![Deleting duplicates](salesforce/13_report_billing_country_179_after.png)
+![Near-duplicate example 1](salesforce/12_near_duplicate_examples1.png)
+![Near-duplicate example 2](salesforce/12_near_duplicate_examples2.png)
+![Near-duplicate example 3](salesforce/12_near_duplicate_examples3.png)
+![Accounts after deleting 15 duplicates: 179](salesforce/13_report_billing_country_179_after.png)
 
 ### 5. Data quality reports
 Built and saved five Lightning reports to monitor completeness and consistency.
@@ -76,13 +89,11 @@ Accounts by Billing Country after cleanup:
 
 | Billing Country | Accounts |
 |---|---|
-| India | **134** |
-| Singapore | **28** |
-| United Kingdom | **32** |
+| India | *(fill from the 179 report)* |
+| Singapore | *(fill from the 179 report)* |
+| United Kingdom | *(fill from the 179 report)* |
 | **Total** | **179** |
 
-![Billing country, 179 after cleanup](salesforce/11_report_billing_country_194_before1.png)
-![Billing country, 179 after cleanup](salesforce/11_report_billing_country_194_before2.png)
 ![Missing Phone](salesforce/08_report_missing_phone.png)
 ![Missing Industry](salesforce/14_report_missing_industry.png)
 ![Missing Website](salesforce/09_report_missing_website.png)
