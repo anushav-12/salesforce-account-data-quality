@@ -95,8 +95,8 @@ Accounts by Billing Country after cleanup:
 | **Total** | **179** |
 
 
-![Accounts by Billing Country, 194 total](salesforce/11_report_billing_country_194_after1.png)
-![Accounts by Billing Country, 194 total](salesforce/11_report_billing_country_194_after2.png)
+![Accounts by Billing Country, 194 total](salesforce/11_report_billing_country_179_after1.png)
+![Accounts by Billing Country, 194 total](salesforce/11_report_billing_country_179_after2.png)
 
 ![Missing Phone](salesforce/08_report_missing_phone.png)
 ![Missing Industry](salesforce/14_report_missing_industry.png)
