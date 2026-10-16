@@ -41,8 +41,8 @@ Standardised the country values to one format (for example `UK` and `united king
 
 Total accounts after load: **194** *(TODO: add one line explaining how the last record was added, e.g. fixed and created manually)*.
 
-![Reload result](screenshots/04_reload_34_loaded_2_failed.png)
-![Accounts by Billing Country, 194 total](screenshots/10_report_billing_country_194_before.png)
+![Reload result](salesforce/04_reload_34_loaded_2_failed1.png)
+![Accounts by Billing Country, 194 total](salesforce/06_all_194_completed.png)
 
 ### 3. Duplicate controls
 Activated the **Standard Account Duplicate Rule** with its **Matching Rule**, set to **Allow with Alert and Report**.
@@ -50,16 +50,16 @@ Activated the **Standard Account Duplicate Rule** with its **Matching Rule**, se
 - It blocked one exact duplicate during the reload.
 - The Duplicate Record Sets list stayed empty, and **near-duplicates were not flagged**, so the standard rule is not enough on its own.
 
-![Matching rule](screenshots/05_matching_rule_active.png)
-![Duplicate rule](screenshots/06_duplicate_rule_active.png)
-![Exact duplicate blocked](screenshots/07_exact_duplicate_blocked.png)
-![Duplicate record sets empty](screenshots/08_duplicate_record_sets_empty.png)
+![Matching rule](salesforce/07_matching_rule_active.png)
+![Duplicate rule](salesforce/07_duplicate_rule_active.png)
+![Duplicate record sets empty](salesforce/04_reload_34_loaded_2_failed1.png)
 
 ### 4. Manual duplicate review and cleanup: 194 to 179
 Because the rule missed near-duplicates, I reviewed accounts by name, phone and website, and deleted **15 duplicates** (exact and near). Accounts went from **194 to 179**.
 
-![Near-duplicate examples](screenshots/09_near_duplicate_examples.png)
-![Deleting duplicates](screenshots/11_delete_15_duplicates.png)
+![Near-duplicate examples](salesforce/12_near_duplicate_examples1.png)
+![Near-duplicate examples](salesforce/12_near_duplicate_examples2.png)
+![Deleting duplicates](salesforce/13_report_billing_country_179_after.png)
 
 ### 5. Data quality reports
 Built and saved five Lightning reports to monitor completeness and consistency.
@@ -81,11 +81,12 @@ Accounts by Billing Country after cleanup:
 | United Kingdom | *(TODO)* |
 | **Total** | **179** |
 
-![Billing country, 179 after cleanup](screenshots/12_report_billing_country_179_after.png)
-![Missing Phone](screenshots/13_report_missing_phone.png)
-![Missing Industry](screenshots/14_report_missing_industry.png)
-![Missing Website](screenshots/15_report_missing_website.png)
-![Missing City](screenshots/16_report_missing_city.png)
+![Billing country, 179 after cleanup](salesforce/11_report_billing_country_194_before1.png)
+![Billing country, 179 after cleanup](salesforce/11_report_billing_country_194_before2.png)
+![Missing Phone](salesforce/08_report_missing_phone.png)
+![Missing Industry](salesforce/14_report_missing_industry.png)
+![Missing Website](salesforce/09_report_missing_website.png)
+![Missing City](salesforce/10_report_missing_city.png)
 
 ---
 
