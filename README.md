@@ -31,7 +31,7 @@ Load a deliberately messy set of customer accounts into Salesforce, find and fix
 ### 1. Initial import: 159 loaded, 36 failed
 Imported 195 accounts. 36 records failed because Billing Country values were not valid picklist values. The error file showed exactly which values caused it.
 
-![Import wizard](salesforce/1_import_wizard_195_records.png)
+![Import wizard](salesforce/01_import_wizard_195_records.png)
 ![Bulk job result](salesforce/02_bulk_job_159_loaded_36_failed.png)
 ![Error CSV, part 1](salesforce/03_error_csv_invalid_country1.png)
 ![Error CSV, part 2](salesforce/03_error_csv_invalid_country2.png)
@@ -95,9 +95,8 @@ Accounts by Billing Country after cleanup:
 | **Total** | **179** |
 
 
-![Accounts by Billing Country, 194 total](salesforce/11_report_billing_country_179_after1.png)
-![Accounts by Billing Country, 194 total](salesforce/11_report_billing_country_179_after2.png)
-
+![Accounts by Billing Country after cleanup: 179 total](salesforce/11_report_billing_country_179_after1.png)
+![Accounts by Billing Country after cleanup: 179 total](salesforce/11_report_billing_country_179_after2.png)
 ![Missing Phone](salesforce/08_report_missing_phone.png)
 ![Missing Industry](salesforce/14_report_missing_industry.png)
 ![Missing Website](salesforce/09_report_missing_website.png)
