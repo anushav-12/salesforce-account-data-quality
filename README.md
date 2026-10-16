@@ -89,10 +89,14 @@ Accounts by Billing Country after cleanup:
 
 | Billing Country | Accounts |
 |---|---|
-| India | *(fill from the 179 report)* |
-| Singapore | *(fill from the 179 report)* |
-| United Kingdom | *(fill from the 179 report)* |
+| India | *123* |
+| Singapore | *27* |
+| United Kingdom | *29* |
 | **Total** | **179** |
+
+
+![Accounts by Billing Country, 194 total](salesforce/11_report_billing_country_194_after1.png)
+![Accounts by Billing Country, 194 total](salesforce/11_report_billing_country_194_after2.png)
 
 ![Missing Phone](salesforce/08_report_missing_phone.png)
 ![Missing Industry](salesforce/14_report_missing_industry.png)
